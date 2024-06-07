@@ -1,0 +1,16 @@
+{% extends "theID/base.html" %}
+{% block title %}OSDSS{% endblock %}
+
+{% block content %}
+<h4>Profile</h4>
+<div>
+    <p>
+        Username: {{ request.user.username }} <br>
+        Name: {{ request.user.first_name }} {{ request.user.last_name }}<br>
+        Date Joined: {{ request.user.date_joined }} <br>
+        Email: {{ request.user.email }}<br>
+        Last Login: {{ request.user.last_login }}<br>
+    </p>
+</div>
+{% endblock %}
+

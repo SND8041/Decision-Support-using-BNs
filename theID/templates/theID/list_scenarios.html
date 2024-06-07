@@ -1,0 +1,70 @@
+{% extends "theID/base.html" %}
+{% block title %}OSDSS nya wala{% endblock %}
+{% load humanize %}
+{% block content %}
+<h4>List of all saved scenarios</h4>
+<div>
+    <br/>
+    {% for scenario in scenario_list %}
+    <strong>Scenario name: <a href="{% url 'sei-curr-scenario' scenario.id %}">{{scenario.name}}</a></strong>
+    <ul class="list-group">
+          <li class="list-group-item">
+              <span class="text-info">Scenario ID: </span><span>{{ scenario.id }}</span>
+              <br>
+              {% if scenario.season == 1 %}
+                <span class="text-info">Season: </span><span>Winter</span>
+              {% elif scenario.season == 2 %}
+                <span class="text-info">Season: </span><span>Spring</span>
+              {% elif scenario.season == 3 %}
+                <span class="text-info">Season: </span><span>Summer</span>
+              {% else %}
+                <span class="text-info">Season: </span><span>Fall</span>
+              {% endif %}
+              <br>
+                {% if scenario.temperature == 1 %}
+                    <span class="text-info">Temperature: </span><span>High</span>
+                {% elif scenario.temperature == 2 %}
+                    <span class="text-info">Temperature: </span><span>Moderate</span>
+                {% else %}
+                    <span class="text-info">Temperature: </span><span>Low</span>
+                {% endif %}
+              <br>
+                <span class="text-info">Population size: </span><span>{{ scenario.population_size|intword }}</span>
+              <br>
+              {% if scenario.sea_state == 1 %}
+                <span class="text-info">Sea state: </span><span>Rough</span>
+              {% else %}
+                <span class="text-info">Sea state: </span><span>Calm</span>
+              {% endif %}
+              <br>
+
+              {% if scenario.recovery_method == 1 %}
+                <span class="text-info">Recovery Method: </span><span>Natural attenuation</span>
+              {% elif scenario.recovery_method == 2 %}
+                <span class="text-info">Recovery Method: </span><span>use of dispersant</span>
+              {% elif scenario.recovery_method == 3 %}
+                <span class="text-info">Recovery Method: </span><span>mechanical recovery</span>
+              {% else %}
+                <span class="text-info">Recovery Method: </span><span>in-situ burning</span>
+              {% endif %}
+              <br>
+              <span class="text-info">Quantity of spilled oil: </span><span>{{ scenario.quantity_of_oil }} US gallon</span>
+              <br>
+              <span class="text-info">1st year socioeconomic impact: </span><span>US ${{ scenario.socioeconomic_impact|intword }}</span>
+              <br>
+          </li>
+      </ul>
+    <div class="card-footer text-muted">
+        <a href="{% url 'delete-scenario' scenario.id %}"
+           class="btn btn-outline-danger btn-sm" style = "float:right" >Delete Scenario</a>
+
+
+        <a href="{% url 'update-scenario' scenario.id %}"
+           class="btn btn-outline-primary btn-sm" style = "float: right">Update Scenario</a>
+    </div>
+
+    </br><br>
+
+    {% endfor %}
+</div>
+{% endblock %}

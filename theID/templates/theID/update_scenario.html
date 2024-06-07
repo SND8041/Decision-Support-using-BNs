@@ -1,0 +1,18 @@
+{% extends 'theID/base.html' %}
+{% load humanize%}
+{% block content %}
+
+<h1>Collection of information to build a spill scenario</h1>
+    <br/>
+    <div class = "shadow p-3 mb-5 bg-light rounded">
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <br/>
+        <input type="submit" value="Update" class="btn btn-secondary">
+    </form>
+    </div>
+
+
+
+{% endblock %}

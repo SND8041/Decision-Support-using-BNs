@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}OSDSS{% endblock %}
+{% block heading %}Logout Page to OSDSS{% endblock %}
+{% block content %}
+
+{% block breadcrumbs %}<div class="breadcrumbs"><a href="{% url 'admin:index' %}">Home</a></div>{% endblock %}
+
+<p>Thanks for spending 2 some quality time with the Web site today.</p>
+
+<p><a href="{% url 'accounts:login' %}">Log in again</a></p>
+
+{% endblock %}

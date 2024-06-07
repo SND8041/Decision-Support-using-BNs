@@ -1,0 +1,728 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<smile version="1.0" id="Network1" numsamples="10000" discsamples="10000">
+	<nodes>
+		<cpt id="Season">
+			<state id="Winter" />
+			<state id="Spring" />
+			<state id="Summer" />
+			<state id="Fall" />
+			<probabilities>0.3500000000000001 0.2 0.2 0.25</probabilities>
+		</cpt>
+		<cpt id="Icecover">
+			<state id="Large_Presence" />
+			<state id="Small_small_or_No" />
+			<probabilities>0.5875 0.4125</probabilities>
+		</cpt>
+		<cpt id="Temperature">
+			<state id="High" />
+			<state id="Moderate" />
+			<state id="Low" />
+			<probabilities>0.2000000000000001 0.2 0.6</probabilities>
+			<property id="DSL_OUTCOME_ORDER">1</property>
+		</cpt>
+		<cpt id="Geography_of_voyage">
+			<state id="Heavily_ice" />
+			<state id="Medium_ice" />
+			<state id="Low_ice" />
+			<probabilities>0.5 0.3 0.2</probabilities>
+		</cpt>
+		<cpt id="Experienceofcrew">
+			<state id="Low_level_of_experience" />
+			<state id="Experienced" />
+			<probabilities>0.6375 0.3625</probabilities>
+		</cpt>
+		<cpt id="Hull">
+			<state id="Single_Hull" />
+			<state id="Double_Hull" />
+			<probabilities>0.172727 0.827273</probabilities>
+		</cpt>
+		<cpt id="Material_ship_is_made_of">
+			<state id="Thin" />
+			<state id="Thick" />
+			<probabilities>0.4 0.6</probabilities>
+		</cpt>
+		<cpt id="Holesize">
+			<state id="Big" />
+			<state id="Small" />
+			<parents>Hull Material_ship_is_made_of</parents>
+			<probabilities>0.8 0.2 0.7 0.3 0.3 0.6999999999999998 0.2 0.8</probabilities>
+		</cpt>
+		<cpt id="Accident">
+			<state id="Yes" />
+			<state id="No" />
+			<parents>Season Icecover Temperature Geography_of_voyage Experienceofcrew Holesize</parents>
+			<probabilities>0.7 0.3 0.6 0.4 0.6 0.4 0.5 0.5 0.6 0.4 0.5 0.5 0.5 0.5 0.4 0.6 0.5 0.5 0.4 0.6 0.3 0.7 0.3 0.7 0.6 0.4 0.55 0.45 0.5600000000000001 0.4399999999999999 0.4 0.6 0.5600000000000001 0.4399999999999999 0.45 0.55 0.45 0.55 0.34 0.6599999999999999 0.45 0.55 0.34 0.6599999999999999 0.23 0.7699999999999999 0.2 0.7999999999999999 0.5600000000000001 0.4399999999999999 0.45 0.55 0.46 0.54 0.34 0.6599999999999999 0.46 0.54 0.35 0.65 0.34 0.6599999999999999 0.24 0.76 0.35 0.65 0.24 0.76 0.13 0.87 0.12 0.88 0.7 0.3 0.75 0.25 0.78 0.22 0.77 0.23 0.7 0.3 0.6 0.4000000000000001 0.6 0.4000000000000001 0.7 0.3 0.7 0.3 0.68 0.3199999999999999 0.68 0.3199999999999999 0.58 0.4200000000000001 0.6899999999999999 0.3100000000000001 0.71 0.29 0.74 0.26 0.72 0.28 0.68 0.32 0.59 0.41 0.58 0.42 0.68 0.32 0.67 0.33 0.65 0.35 0.58 0.42 0.48 0.52 0.46 0.54 0.35 0.65 0.36 0.64 0.24 0.76 0.36 0.64 0.25 0.75 0.24 0.76 0.14 0.86 0.25 0.75 0.14 0.86 0.11 0.89 0.1 0.9 0.36 0.64 0.25 0.75 0.26 0.74 0.14 0.86 0.26 0.74 0.15 0.85 0.14 0.86 0.1 0.9 0.15 0.85 0.1 0.9 0.09 0.91 0.06 0.9399999999999999 0.35 0.65 0.23 0.77 0.3 0.7000000000000001 0.14 0.86 0.16 0.84 0.05 0.9500000000000001 0.04 0.96 0.01 0.99 0.05 0.9500000000000001 0.01 0.99 0.008999999999999999 0.991 0.006 0.994 0.45 0.55 0.33 0.6699999999999998 0.4 0.6 0.24 0.76 0.26 0.74 0.15 0.85 0.14 0.86 0.11 0.89 0.15 0.85 0.11 0.89 0.01 0.99 0.007 0.993 0.16 0.84 0.05 0.9499999999999998 0.06 0.9400000000000001 0.04 0.96 0.03 0.97 0.01 0.9900000000000001 0.094 0.9059999999999999 0.01 0.99 0.05 0.9500000000000001 0.01 0.99 0.008999999999999999 0.991 0.006 0.994 0.15 0.85 0.03 0.97 0.1 0.9000000000000001 0.04 0.96 0.06 0.9399999999999999 0.01 0.9899999999999999 0.002 0.998 0.001 0.999 0.01 0.9899999999999999 0.001 0.999 0.002 0.998 0.001 0.999 0.05 0.9499999999999998 0.03 0.97 0.1 0.9000000000000001 0.04 0.9600000000000001 0.06 0.9400000000000001 0.02 0.98 0.04 0.96 0.01 0.99 0.05 0.9500000000000001 0.01 0.99 0.001 0.999 0.0007 0.9993 0.39 0.61 0.29 0.71 0.29 0.71 0.16 0.84 0.29 0.71 0.18 0.8200000000000001 0.16 0.84 0.2 0.8 0.18 0.8200000000000001 0.2 0.8 0.1 0.9 0.07000000000000001 0.9299999999999999 0.4 0.6 0.3 0.6999999999999998 0.4 0.6 0.2 0.8 0.21 0.79 0.09 0.91 0.05 0.95 0.04 0.96 0.08 0.92 0.04 0.96 0.05 0.95 0.02 0.98 0.49 0.51 0.36 0.64 0.9 0.09999999999999998 0.29 0.71 0.28 0.72 0.17 0.83 0.17 0.83 0.1 0.9 0.19 0.8100000000000001 0.1 0.9 0.04 0.96 0.008 0.992 0.19 0.8100000000000001 0.09 0.91 0.08 0.92 0.08 0.92 0.04 0.96 0.03 0.97 0.01 0.99 0.02 0.98 0.06 0.9399999999999999 0.02 0.98 0.01 0.99 0.007 0.993 0.17 0.83 0.04 0.96 0.2 0.8 0.06 0.9399999999999999 0.08 0.92 0.03 0.97 0.004 0.996 0.003 0.997 0.03 0.97 0.003 0.997 0.004 0.996 0.002 0.998 0.07000000000000001 0.9299999999999999 0.04 0.96 0.2 0.8 0.06 0.9399999999999999 0.08 0.92 0.04 0.96 0.06 0.9399999999999999 0.03 0.97 0.07000000000000001 0.9299999999999999 0.03 0.97 0.003 0.997 0.0009 0.9991 0.38 0.62 0.28 0.72 0.28 0.72 0.14 0.86 0.26 0.74 0.16 0.8400000000000001 0.14 0.86 0.09 0.91 0.14 0.86 0.09 0.91 0.08 0.92 0.05 0.9500000000000001 0.3 0.7 0.2 0.8 0.3 0.7 0.1 0.9 0.11 0.89 0.07000000000000001 0.9299999999999999 0.02 0.98 0.01 0.99 0.05 0.95 0.02 0.98 0.02 0.98 0.008999999999999999 0.991 0.46 0.54 0.34 0.6599999999999999 0.7 0.3 0.23 0.77 0.25 0.7500000000000001 0.14 0.86 0.15 0.85 0.09 0.91 0.16 0.84 0.09 0.91 0.02 0.98 0.005 0.995 0.16 0.84 0.07000000000000001 0.9299999999999999 0.05 0.95 0.07000000000000001 0.9299999999999999 0.02 0.98 0.01 0.99 0.008999999999999999 0.991 0.008999999999999999 0.991 0.04 0.96 0.01 0.99 0.008999999999999999 0.991 0.004 0.996 0.15 0.85 0.02 0.98 0.1 0.9 0.06 0.9399999999999999 0.06 0.9399999999999999 0.02 0.98 0.001 0.999 0.0009 0.9991 0.01 0.99 0.001 0.999 0.001 0.999 0.0009 0.9991 0.05 0.9500000000000001 0.02 0.98 0.2 0.8000000000000002 0.06 0.9399999999999999 0.04 0.96 0.01 0.99 0.04 0.96 0.01 0.99 0.05 0.9500000000000001 0.01 0.99 0.001 0.999 0.0005 0.9995000000000001</probabilities>
+		</cpt>
+		<cpt id="Quantityofoil">
+			<state id="T_greatherthan_700" />
+			<state id="T_7_700" />
+			<state id="T_lessthan_7" />
+			<parents>Accident</parents>
+			<probabilities>0.04999999999999994 0.15 0.8 0.001000000000000001 0.05 0.949</probabilities>
+			<property id="DSL_OUTCOME_ORDER">1</property>
+		</cpt>
+		<cpt id="Cleanup_cost">
+			<state id="High" />
+			<state id="Low" />
+			<parents>Quantityofoil</parents>
+			<probabilities>0.99 0.01000000000000001 0.475 0.525 0.01 0.9900000000000001</probabilities>
+		</cpt>
+		<cpt id="Typeofoil">
+			<state id="Extra_Heavy" />
+			<state id="Heavy" />
+			<state id="Medium" />
+			<state id="Light" />
+			<probabilities>0.1 0.2 0.2 0.5</probabilities>
+			<property id="DSL_OUTCOME_ORDER">1</property>
+		</cpt>
+		<cpt id="Type_of_hydrocarbon_released">
+			<state id="Toxic" />
+			<state id="Non_toxic" />
+			<parents>Typeofoil</parents>
+			<probabilities>0.6 0.4 0.6 0.4 0.7 0.3 0.8 0.2</probabilities>
+		</cpt>
+		<cpt id="Age_of_vessel">
+			<state id="T15_20" />
+			<state id="T10_15" />
+			<state id="T5_10" />
+			<state id="T1_5" />
+			<probabilities>0.6 0.25 0.09999999999999999 0.05000000000000003</probabilities>
+		</cpt>
+		<cpt id="Size_of_ship">
+			<state id="Big" />
+			<state id="Small" />
+			<probabilities>0.7 0.3</probabilities>
+		</cpt>
+		<cpt id="Daysexpectedtospendatsea">
+			<state id="T15_25" />
+			<state id="T5_15" />
+			<parents>Age_of_vessel Experienceofcrew Size_of_ship</parents>
+			<probabilities>0.506 0.494 0.71 0.29 0.506 0.494 0.71 0.29 0.73 0.27 0.777 0.223 0.55 0.45 0.71 0.29 0.506 0.494 0.71 0.29 0.506 0.494 0.71 0.29 0.73 0.27 0.777 0.223 0.55 0.45 0.71 0.29</probabilities>
+		</cpt>
+		<cpt id="Sea_State">
+			<state id="Rough" />
+			<state id="Calm" />
+			<probabilities>0.3 0.7</probabilities>
+		</cpt>
+		<cpt id="Release">
+			<state id="High" />
+			<state id="Low" />
+			<parents>Hull Accident Sea_State Quantityofoil</parents>
+			<probabilities>0.737894528 0.262105472 0.588 0.412 0.35 0.65 0.57624 0.42376 0.588 0.412 0.35 0.65 0.5647152 0.4352848 0.588 0.412 0.3 0.7000000000000001 0.57624 0.42376 0.588 0.412 0.3 0.7000000000000001 0.553420896 0.446579104 0.392 0.608 0.1 0.9 0.38416 0.6158400000000001 0.392 0.608 0.1 0.9 0.3764768 0.6235232000000001 0.392 0.608 0.05 0.9500000000000001 0.38416 0.6158400000000001 0.392 0.608 0.05 0.9500000000000001</probabilities>
+		</cpt>
+		<cpt id="NORDREG_Zone">
+			<state id="Yes" />
+			<state id="No" />
+			<probabilities>0.202531646 0.797468354</probabilities>
+		</cpt>
+		<cpt id="Legal_cost">
+			<state id="High" />
+			<state id="Low" />
+			<parents>NORDREG_Zone</parents>
+			<probabilities>0.9 0.1 0.6 0.4</probabilities>
+		</cpt>
+		<cpt id="Costofcompensation">
+			<state id="High" />
+			<state id="Low" />
+			<parents>Release Legal_cost Cleanup_cost</parents>
+			<probabilities>0.96 0.04000000000000004 0.85 0.15 0.88 0.12 0.95 0.05000000000000004 0.35 0.65 0.6 0.4 0.2 0.8 0.99 0.01000000000000001</probabilities>
+		</cpt>
+		<cpt id="VoyageSafety">
+			<state id="Low" />
+			<state id="High" />
+			<parents>Experienceofcrew Geography_of_voyage</parents>
+			<probabilities>0.85 0.15 0.4399999999999999 0.5600000000000001 0.23 0.77 0.15 0.85 0.09999999999999998 0.9 0.01000000000000001 0.99</probabilities>
+		</cpt>
+		<cpt id="ExposureToDanger">
+			<state id="High" />
+			<state id="Low" />
+			<parents>Material_ship_is_made_of Daysexpectedtospendatsea Age_of_vessel</parents>
+			<probabilities>0.679 0.321 0.675 0.325 0.65 0.3499999999999999 0.62 0.38 0.67 0.33 0.62 0.38 0.59 0.41 0.57 0.43 0.48 0.52 0.45 0.55 0.375 0.625 0.35 0.65 0.44 0.5600000000000001 0.375 0.625 0.355 0.645 0.33 0.6699999999999999</probabilities>
+		</cpt>
+		<cpt id="Economic_effect">
+			<state id="High" />
+			<state id="Low" />
+			<parents>Costofcompensation Quantityofoil VoyageSafety ExposureToDanger</parents>
+			<probabilities>0.956 0.044 0.844 0.156 0.91 0.09 0.884 0.116 0.772 0.228 0.652 0.348 0.672 0.328 0.665 0.335 0.621 0.379 0.509 0.491 0.553 0.447 0.521 0.479 0.215 0.785 0.327 0.673 0.211 0.789 0.259 0.741 0.205 0.795 0.205 0.795 0.189 0.8110000000000001 0.115 0.885 0.19 0.8100000000000001 0.18 0.82 0.15 0.85 0.05 0.95</probabilities>
+		</cpt>
+		<cpt id="Soil_damage">
+			<state id="High" />
+			<state id="Low" />
+			<probabilities>0.9 0.1</probabilities>
+		</cpt>
+		<cpt id="Decreaseinwatersupply">
+			<state id="High" />
+			<state id="Low" />
+			<parents>Release Soil_damage</parents>
+			<probabilities>0.6333333 0.3666667 0.3666667 0.6333333 0.35 0.65 0.113333 0.886667</probabilities>
+		</cpt>
+		<cpt id="Locationofresponseequipment">
+			<state id="Near_less_than_1km" />
+			<state id="Far_More_than_1km" />
+			<probabilities>0.4625 0.5375</probabilities>
+		</cpt>
+		<cpt id="Number_of_response_equipment">
+			<state id="Near_less_than_1km" />
+			<state id="Far_More_than_1km" />
+			<probabilities>0.3 0.7</probabilities>
+		</cpt>
+		<cpt id="Time">
+			<state id="Near_less_than_1km" />
+			<state id="Far_More_than_1km" />
+			<probabilities>0.7 0.3</probabilities>
+		</cpt>
+		<cpt id="Personnel">
+			<state id="Near_less_than_1km" />
+			<state id="Far_More_than_1km" />
+			<probabilities>0.7 0.3</probabilities>
+		</cpt>
+		<cpt id="Response">
+			<state id="Slow" />
+			<state id="Prompt" />
+			<parents>Locationofresponseequipment Number_of_response_equipment Time Personnel Release</parents>
+			<probabilities>0.0533 0.9467 0.27 0.73 0.9 0.1 0.8500000000000001 0.15 0.7999999999999999 0.2 0.83 0.17 0.8 0.2 0.87 0.13 0.9 0.1 0.87 0.13 0.95 0.05 0.96 0.04 0.9199999999999999 0.08 0.9199999999999999 0.08 0.95 0.05 0.96 0.04 0.25 0.75 0.2179 0.7821 0.8899999999999999 0.11 0.87 0.13 0.75 0.25 0.85 0.15 0.86 0.14 0.83 0.17 0.34 0.66 0.38 0.62 0.8 0.2 0.88 0.12 0.65 0.35 0.88 0.12 0.8972 0.1028 0.95 0.05</probabilities>
+		</cpt>
+		<cpt id="Exposure_to_oil">
+			<state id="High" />
+			<state id="Low" />
+			<parents>Quantityofoil Release Daysexpectedtospendatsea</parents>
+			<probabilities>0.99 0.01 0.95 0.05 0.9 0.1 0.87 0.13 0.89 0.11 0.85 0.15 0.86 0.14 0.82 0.18 0.35 0.65 0.25 0.75 0.05 0.95 0.01 0.99</probabilities>
+		</cpt>
+		<cpt id="Destruction_of_flora_and_fauna">
+			<state id="High" />
+			<state id="Low" />
+			<parents>Response Type_of_hydrocarbon_released Exposure_to_oil</parents>
+			<probabilities>0.99 0.01000000000000001 0.8 0.2 0.66 0.34 0.1 0.9 0.77 0.23 0.25 0.75 0.25 0.7499999999999999 0.01 0.99</probabilities>
+		</cpt>
+		<cpt id="Environmentaleffect">
+			<state id="High" />
+			<state id="Low" />
+			<parents>Decreaseinwatersupply Destruction_of_flora_and_fauna</parents>
+			<probabilities>0.99 0.01000000000000001 0.8606 0.1394 0.87 0.13 0.01 0.99</probabilities>
+		</cpt>
+		<cpt id="Leveloftrust">
+			<state id="Low" />
+			<state id="High" />
+			<parents>Response</parents>
+			<probabilities>0.66 0.3399999999999999 0.22 0.7799999999999999</probabilities>
+		</cpt>
+		<cpt id="Hunting_disruption">
+			<state id="High" />
+			<state id="Low" />
+			<parents>Response Release</parents>
+			<probabilities>0.8888 0.1112 0.265 0.7350000000000001 0.615 0.385 0.15 0.85</probabilities>
+		</cpt>
+		<cpt id="RiseInFoodCost">
+			<state id="Low" />
+			<state id="High" />
+			<probabilities>0.65 0.35</probabilities>
+		</cpt>
+		<cpt id="Rise_in_health_expenses">
+			<state id="Low" />
+			<state id="High" />
+			<probabilities>0.75 0.25</probabilities>
+		</cpt>
+		<cpt id="Psychologicaleffect">
+			<state id="High" />
+			<state id="Low" />
+			<parents>Response RiseInFoodCost Rise_in_health_expenses</parents>
+			<probabilities>0.2 0.8000000000000002 0.63 0.37 0.3 0.7 0.65 0.35 0.15 0.8500000000000001 0.55 0.45 0.25 0.75 0.6 0.4000000000000001</probabilities>
+		</cpt>
+		<cpt id="Disruptioninassociation">
+			<state id="High" />
+			<state id="Low" />
+			<parents>Psychologicaleffect</parents>
+			<probabilities>0.95 0.05000000000000004 0.05000000000000004 0.95</probabilities>
+		</cpt>
+		<cpt id="Cultureinteference">
+			<state id="High_impact" />
+			<state id="Low_impact" />
+			<parents>Release Hunting_disruption</parents>
+			<probabilities>0.9 0.09999999999999998 0.728125 0.271875 0.85 0.15 0.01 0.99</probabilities>
+		</cpt>
+		<cpt id="Social_disruption">
+			<state id="High" />
+			<state id="Low" />
+			<parents>Response Decreaseinwatersupply Leveloftrust Quantityofoil</parents>
+			<probabilities>0.99 0.01000000000000001 0.95 0.05000000000000004 0.9 0.09999999999999998 0.95 0.05000000000000004 0.9 0.09999999999999998 0.85 0.15 0.95 0.05000000000000004 0.9 0.09999999999999998 0.85 0.15 0.9 0.09999999999999998 0.85 0.15 0.8 0.2 0.75 0.25 0.65 0.3499999999999999 0.15 0.85 0.55 0.45 0.45 0.55 0.05 0.95 0.25 0.75 0.2 0.8 0.15 0.85 0.2 0.8 0.15 0.85 0.01 0.99</probabilities>
+		</cpt>
+		<cpt id="Impact">
+			<state id="High" />
+			<state id="Low" />
+			<parents>Social_disruption Disruptioninassociation Cultureinteference</parents>
+			<probabilities>0.99 0.01000000000000001 0.903 0.097 0.879 0.121 0.85 0.15 0.85 0.15 0.4 0.6 0.1 0.9 0.05 0.95</probabilities>
+		</cpt>
+		<decision id="Recovery_method">
+			<state id="Insitu" />
+			<state id="Mechanical" />
+			<state id="Natural_Attenuation" />
+			<state id="Dispersant" />
+			<parents>Response</parents>
+		</decision>
+		<utility id="EnvImp">
+			<parents>Recovery_method Environmentaleffect</parents>
+			<utilities>280776472 1063138 280701120 1062747 280706584.3 1063496 280700214 1062913</utilities>
+		</utility>
+		<utility id="EcoImp">
+			<parents>Economic_effect Recovery_method</parents>
+			<utilities>188250162.8 187521805 189025509.5 187508289.1 140701606.3603216 140698026.3603216 140695776.3603216 140694116.3603216</utilities>
+		</utility>
+		<utility id="SocImp">
+			<parents>Impact Recovery_method</parents>
+			<utilities>4784540.4 4775065.6 4789049.85 4783033.6 10634960 10631380 10629130 10627470</utilities>
+		</utility>
+	</nodes>
+	<extensions>
+		<genie version="1.0" app="GeNIe 4.1.3724.2 1da4ef968a02580" name="Network1" arccolor="ff6600">
+			<node id="Quantityofoil">
+				<name>Quantity of oil</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="9" />
+				<position>442 416 510 463</position>
+				<barchart width="128" height="76" />
+			</node>
+			<node id="Typeofoil">
+				<name>Type of oil</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="9" />
+				<position>134 218 202 255</position>
+				<barchart width="128" height="95" />
+			</node>
+			<node id="Season">
+				<name>Season</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="9" />
+				<position>288 128 350 166</position>
+				<barchart width="128" height="95" />
+			</node>
+			<node id="Temperature">
+				<name>Temperature</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="9" />
+				<position>150 169 244 213</position>
+				<barchart width="128" height="76" />
+			</node>
+			<node id="Icecover">
+				<name>Ice cover</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="9" />
+				<position>210 121 279 171</position>
+				<barchart width="128" height="64" />
+			</node>
+			<node id="Holesize">
+				<name>Hole size</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="9" />
+				<position>365 163 431 202</position>
+				<barchart width="128" height="64" />
+			</node>
+			<node id="Accident">
+				<name>Accident</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="9" />
+				<position>252 216 316 259</position>
+				<barchart width="128" height="64" />
+			</node>
+			<node id="Type_of_hydrocarbon_released">
+				<name>Type of hydrocarbon released</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="9" />
+				<position>131 281 252 341</position>
+				<barchart width="128" height="64" />
+			</node>
+			<node id="Age_of_vessel">
+				<name>Age of vessel</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="9" />
+				<position>821 185 890 231</position>
+				<barchart width="128" height="95" />
+			</node>
+			<node id="Material_ship_is_made_of">
+				<name>Material strength</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="9" />
+				<position>694 272 785 323</position>
+				<barchart width="128" height="64" />
+			</node>
+			<node id="Size_of_ship">
+				<name>Size of ship</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="9" />
+				<position>835 117 915 158</position>
+				<barchart width="128" height="64" />
+			</node>
+			<node id="Geography_of_voyage">
+				<name>Geography of voyage</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="9" />
+				<position>444 259 556 300</position>
+				<barchart width="128" height="76" />
+			</node>
+			<node id="Daysexpectedtospendatsea">
+				<name>Days spent at sea</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="9" />
+				<position>686 201 781 253</position>
+				<barchart width="128" height="90" />
+			</node>
+			<node id="Experienceofcrew">
+				<name>Experience of crew</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="9" />
+				<position>578 250 668 298</position>
+				<barchart width="128" height="64" />
+			</node>
+			<node id="Decreaseinwatersupply">
+				<name>Effect on water supply</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="9" />
+				<position>380 332 490 378</position>
+				<barchart width="128" height="64" />
+			</node>
+			<node id="Leveloftrust">
+				<name>Level of trust</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="9" />
+				<position>1006 294 1091 332</position>
+				<barchart width="128" height="64" />
+			</node>
+			<node id="Hunting_disruption">
+				<name>Hunting disruption</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="9" />
+				<position>834 253 929 298</position>
+				<barchart width="128" height="64" />
+			</node>
+			<node id="Disruptioninassociation">
+				<name>Disruption in association</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="9" />
+				<position>1027 363 1132 413</position>
+				<barchart width="128" height="64" />
+			</node>
+			<node id="Cultureinteference">
+				<name>Culture disruption</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="9" />
+				<position>815 378 911 429</position>
+				<barchart width="128" height="64" />
+			</node>
+			<node id="Psychologicaleffect">
+				<name>Psychological effect</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="9" />
+				<position>1099 280 1215 326</position>
+				<barchart width="128" height="64" />
+			</node>
+			<node id="Social_disruption">
+				<name>Social disruption</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="9" />
+				<position>907 333 998 378</position>
+				<barchart width="128" height="64" />
+			</node>
+			<node id="Hull">
+				<name>Hull</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="9" />
+				<position>363 105 427 143</position>
+				<barchart width="128" height="64" />
+			</node>
+			<node id="Locationofresponseequipment">
+				<name>Location</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="9" />
+				<position>1035 116 1118 156</position>
+				<barchart width="128" height="64" />
+			</node>
+			<node id="Costofcompensation">
+				<name>Cost of compensation</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="9" />
+				<position>508 87 616 143</position>
+				<barchart width="128" height="64" />
+			</node>
+			<node id="Legal_cost">
+				<name>Legal cost</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="9" />
+				<position>634 58 722 98</position>
+				<barchart width="128" height="64" />
+			</node>
+			<node id="Impact">
+				<name>Social effect</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="9" />
+				<position>925 434 1042 479</position>
+				<barchart width="128" height="64" />
+			</node>
+			<node id="Response">
+				<name>Response</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="9" />
+				<position>954 174 1043 212</position>
+				<barchart width="128" height="64" />
+			</node>
+			<node id="Release">
+				<name>Release</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="9" />
+				<position>668 146 750 181</position>
+				<barchart width="128" height="64" />
+			</node>
+			<node id="Economic_effect">
+				<name>Economic effect</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="9" />
+				<position>596 440 720 492</position>
+				<barchart width="128" height="64" />
+			</node>
+			<node id="Environmentaleffect">
+				<name>Environmental effect</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="9" />
+				<position>310 441 437 489</position>
+				<barchart width="128" height="64" />
+			</node>
+			<node id="Destruction_of_flora_and_fauna">
+				<name>Destruction of flora and fauna</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="9" />
+				<position>220 370 334 424</position>
+				<barchart width="128" height="64" />
+			</node>
+			<node id="Number_of_response_equipment">
+				<name>Response equipment</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="9" />
+				<position>892 65 998 119</position>
+				<barchart width="128" height="64" />
+			</node>
+			<node id="Time">
+				<name>Time</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="9" />
+				<position>1007 76 1092 116</position>
+				<barchart width="128" height="64" />
+			</node>
+			<node id="Personnel">
+				<name>Personnel</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="9" />
+				<position>1109 161 1194 201</position>
+				<barchart width="128" height="64" />
+			</node>
+			<node id="NORDREG_Zone">
+				<name>NORDREG_Zone</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="9" />
+				<position>787 61 875 117</position>
+				<barchart width="128" height="64" />
+			</node>
+			<node id="Sea_State">
+				<name>Sea State</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="9" />
+				<position>715 95 776 133</position>
+				<barchart width="128" height="64" />
+			</node>
+			<textbox>
+				<caption>Updated model</caption>
+				<font color="000000" name="Arial" size="9" bold="true" />
+				<position>1411 727 1496 742</position>
+			</textbox>
+			<node id="RiseInFoodCost">
+				<name>Rise in food cost</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="9" />
+				<position>1234 247 1309 296</position>
+				<barchart width="128" height="64" />
+			</node>
+			<node id="Rise_in_health_expenses">
+				<name>Rise in health expenses</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="9" />
+				<position>1177 351 1282 409</position>
+				<barchart width="128" height="64" />
+			</node>
+			<node id="Cleanup_cost">
+				<name>Cleanup cost</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="9" />
+				<position>456 151 531 197</position>
+				<barchart width="128" height="64" />
+			</node>
+			<node id="Soil_damage">
+				<name>Soil damage</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="9" />
+				<position>357 274 433 321</position>
+				<barchart width="128" height="64" />
+			</node>
+			<node id="ExposureToDanger">
+				<name>ExposureToDanger</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="9" />
+				<position>680 344 806 404</position>
+				<barchart width="128" height="64" />
+			</node>
+			<node id="VoyageSafety">
+				<name>VoyageSafety</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="9" />
+				<position>511 345 614 409</position>
+				<barchart width="128" height="64" />
+			</node>
+			<node id="EnvImp">
+				<name>Enviromental Impact</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="9" />
+				<position>454 585 563 617</position>
+				<barchart width="128" height="64" />
+			</node>
+			<node id="EcoImp">
+				<name>Economic Impact</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="9" />
+				<position>595 581 707 613</position>
+				<barchart width="128" height="64" />
+			</node>
+			<node id="SocImp">
+				<name>Social Impact</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="9" />
+				<position>734 581 841 613</position>
+				<barchart width="128" height="64" />
+			</node>
+			<node id="Recovery_method">
+				<name>Recovery method</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="9" />
+				<position>736 508 843 547</position>
+				<barchart width="128" height="95" />
+			</node>
+			<node id="Exposure_to_oil">
+				<name>Exposure to oil</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="9" />
+				<position>262 293 344 344</position>
+			</node>
+			<arcformat parent="Hull" child="Holesize" width="1" color="000000" />
+			<arcformat parent="Material_ship_is_made_of" child="Holesize" width="1" color="000000" />
+			<arcformat parent="Season" child="Accident" width="1" color="000000" />
+			<arcformat parent="Icecover" child="Accident" width="1" color="000000" />
+			<arcformat parent="Temperature" child="Accident" width="1" color="000000" />
+			<arcformat parent="Geography_of_voyage" child="Accident" width="1" color="000000" />
+			<arcformat parent="Experienceofcrew" child="Accident" width="1" color="000000" />
+			<arcformat parent="Holesize" child="Accident" width="1" color="000000" />
+			<arcformat parent="Accident" child="Quantityofoil" width="1" color="000000" />
+			<arcformat parent="Quantityofoil" child="Cleanup_cost" width="1" color="000000" />
+			<arcformat parent="Typeofoil" child="Type_of_hydrocarbon_released" width="1" color="000000" />
+			<arcformat parent="Age_of_vessel" child="Daysexpectedtospendatsea" width="1" color="000000" />
+			<arcformat parent="Experienceofcrew" child="Daysexpectedtospendatsea" width="1" color="000000" />
+			<arcformat parent="Size_of_ship" child="Daysexpectedtospendatsea" width="1" color="000000" />
+			<arcformat parent="Hull" child="Release" width="1" color="000000" />
+			<arcformat parent="Accident" child="Release" width="1" color="000000" />
+			<arcformat parent="Sea_State" child="Release" width="1" color="000000" />
+			<arcformat parent="Quantityofoil" child="Release" width="1" color="000000" />
+			<arcformat parent="NORDREG_Zone" child="Legal_cost" width="1" color="000000" />
+			<arcformat parent="Release" child="Costofcompensation" width="1" color="000000" />
+			<arcformat parent="Legal_cost" child="Costofcompensation" width="1" color="000000" />
+			<arcformat parent="Cleanup_cost" child="Costofcompensation" width="1" color="000000" />
+			<arcformat parent="Experienceofcrew" child="VoyageSafety" width="1" color="000000" />
+			<arcformat parent="Geography_of_voyage" child="VoyageSafety" width="1" color="000000" />
+			<arcformat parent="Material_ship_is_made_of" child="ExposureToDanger" width="1" color="000000" />
+			<arcformat parent="Daysexpectedtospendatsea" child="ExposureToDanger" width="1" color="000000" />
+			<arcformat parent="Age_of_vessel" child="ExposureToDanger" width="1" color="000000" />
+			<arcformat parent="Costofcompensation" child="Economic_effect" width="1" color="000000" />
+			<arcformat parent="Quantityofoil" child="Economic_effect" width="1" color="000000" />
+			<arcformat parent="VoyageSafety" child="Economic_effect" width="1" color="000000" />
+			<arcformat parent="ExposureToDanger" child="Economic_effect" width="1" color="000000" />
+			<arcformat parent="Release" child="Decreaseinwatersupply" width="1" color="000000" />
+			<arcformat parent="Soil_damage" child="Decreaseinwatersupply" width="1" color="000000" />
+			<arcformat parent="Locationofresponseequipment" child="Response" width="1" color="000000" />
+			<arcformat parent="Number_of_response_equipment" child="Response" width="1" color="000000" />
+			<arcformat parent="Time" child="Response" width="1" color="000000" />
+			<arcformat parent="Personnel" child="Response" width="1" color="000000" />
+			<arcformat parent="Release" child="Response" width="1" color="000000" />
+			<arcformat parent="Quantityofoil" child="Exposure_to_oil" width="1" color="000000" />
+			<arcformat parent="Release" child="Exposure_to_oil" width="1" color="000000" />
+			<arcformat parent="Daysexpectedtospendatsea" child="Exposure_to_oil" width="1" color="000000" />
+			<arcformat parent="Response" child="Destruction_of_flora_and_fauna" width="1" color="000000" />
+			<arcformat parent="Type_of_hydrocarbon_released" child="Destruction_of_flora_and_fauna" width="1" color="000000" />
+			<arcformat parent="Exposure_to_oil" child="Destruction_of_flora_and_fauna" width="1" color="000000" />
+			<arcformat parent="Decreaseinwatersupply" child="Environmentaleffect" width="1" color="000000" />
+			<arcformat parent="Destruction_of_flora_and_fauna" child="Environmentaleffect" width="1" color="000000" />
+			<arcformat parent="Response" child="Leveloftrust" width="1" color="000000" />
+			<arcformat parent="Response" child="Hunting_disruption" width="1" color="000000" />
+			<arcformat parent="Release" child="Hunting_disruption" width="1" color="000000" />
+			<arcformat parent="Response" child="Psychologicaleffect" width="1" color="000000" />
+			<arcformat parent="RiseInFoodCost" child="Psychologicaleffect" width="1" color="000000" />
+			<arcformat parent="Rise_in_health_expenses" child="Psychologicaleffect" width="1" color="000000" />
+			<arcformat parent="Psychologicaleffect" child="Disruptioninassociation" width="1" color="000000" />
+			<arcformat parent="Release" child="Cultureinteference" width="1" color="000000" />
+			<arcformat parent="Hunting_disruption" child="Cultureinteference" width="1" color="000000" />
+			<arcformat parent="Response" child="Social_disruption" width="1" color="000000" />
+			<arcformat parent="Decreaseinwatersupply" child="Social_disruption" width="1" color="000000" />
+			<arcformat parent="Leveloftrust" child="Social_disruption" width="1" color="000000" />
+			<arcformat parent="Quantityofoil" child="Social_disruption" width="1" color="000000" />
+			<arcformat parent="Social_disruption" child="Impact" width="1" color="000000" />
+			<arcformat parent="Disruptioninassociation" child="Impact" width="1" color="000000" />
+			<arcformat parent="Cultureinteference" child="Impact" width="1" color="000000" />
+			<arcformat parent="Response" child="Recovery_method" width="1" color="000000" />
+			<arcformat parent="Recovery_method" child="EnvImp" width="1" color="a0a0a0" />
+			<arcformat parent="Environmentaleffect" child="EnvImp" width="1" color="000000" />
+			<arcformat parent="Economic_effect" child="EcoImp" width="1" color="000000" />
+			<arcformat parent="Recovery_method" child="EcoImp" width="1" color="000000" />
+			<arcformat parent="Impact" child="SocImp" width="1" color="000000" />
+			<arcformat parent="Recovery_method" child="SocImp" width="1" color="000000" />
+		</genie>
+	</extensions>
+</smile>

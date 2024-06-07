@@ -1,0 +1,176 @@
+{% extends 'theID/base.html' %}
+{% load humanize%}
+{% load auth_extras %}
+{% block content %}
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 50.00%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+</style>
+
+<h2>Multiperiod socioeconomic impact of oil spills in the Manitoban Arctic region</h2>
+<br>
+<p>Scenario details are given here:</p>
+
+<div class="row">
+    <div class = "column"> <!-- for handling vertical spacing between each of the following sections-->
+       <ul class="list-group">
+            <li class="list-group-item">
+                <span class="text-info">Scenario name: </span> <span>{{ object.name }}</span>
+                <br>
+                {% if object.season == 1 %}
+                    <span class="text-info">Season: </span><span>Winter</span>
+                {% elif object.season == 2 %}
+                    <span class="text-info">Season: </span><span>Spring</span>
+                {% elif object.season == 3 %}
+                    <span class="text-info">Season: </span><span>Summer</span>
+                {% else %}
+                    <span class="text-info">Season: </span><span>Fall</span>
+                {% endif %}
+                <br>
+                <span class="text-info">Population size: </span><span>{{ object.population_size|intword }}</span>
+                <br>
+                {% if object.temperature == 1 %}
+                    <span class="text-info">Temperature: </span><span>High</span>
+                {% elif object.temperature == 2 %}
+                    <span class="text-info">Temperature: </span><span>Moderate</span>
+                {% else %}
+                    <span class="text-info">Temperature: </span><span>Low</span>
+                {% endif %}
+                <br>
+                {% if object.sea_state == 1 %}
+                    <span class="text-info">Sea state: </span><span>Rough</span>
+                {% else %}
+                    <span class="text-info">Sea state: </span><span>Calm</span>
+                {% endif %}
+                <br>
+                {% if object.recovery_method == 1 %}
+                    <span class="text-info">Recovery Method: </span><span>Natural attenuation</span>
+                {% elif object.recovery_method == 2 %}
+                    <span class="text-info">Recovery Method: </span><span>use of dispersant</span>
+                {% elif object.recovery_method == 3 %}
+                    <span class="text-info">Recovery Method: </span><span>mechanical recovery</span>
+                {% else %}
+                    <span class="text-info">Recovery Method: </span><span>in-situ burning</span>
+                {% endif %}
+                <br>
+                <span class="text-info">Quantity of spilled oil: </span><span>{{ object.quantity_of_oil|intword }} US gallon</span>
+                <br>
+                <span class="text-info">1st year socioeconomic impact: </span><span>US ${{ object.socioeconomic_impact|intword }}</span>
+
+      <!--
+      Conditional processing based on the group of the logged in user
+      -->
+                {% if request.user|has_group:"Inuit" %}
+                    <hr/>
+                    {% if object.hunt_distrupt == 0 %}
+                        <span class="text-info">Hunting Distruption: </span><span>Low</span>
+                    {% else %}
+                        <span class="text-info">Hunting Distruption: </span><span>High</span>
+                    {% endif %}
+                    <br>
+                    {% if object.cult_distrupt == 0 %}
+                        <span class="text-info">Cultural Distruption: </span><span>Low</span>
+                    {% else %}
+                        <span class="text-info">Cultural Distruption: </span><span>High</span>
+                    {% endif %}
+                    <br>
+                    {% if object.socio_distrupt == 0 %}
+                        <span class="text-info">Social Distruption: </span><span>Low</span>
+                    {% else %}
+                        <span class="text-info">Social Distruption: </span><span>High</span>
+                    {% endif %}
+                    <br>
+                    {% if object.trust == 0 %}
+                        <span class="text-info">Trust between govt. and the rights holders: </span><span>Low</span>
+                    {% else %}
+                        <span class="text-info">Trust between govt. and the rights holders: </span><span>High</span>
+                    {% endif %}
+                    <br>
+                    {% if object.association_distrupt == 0 %}
+                        <span class="text-info">Distruption in the association among the comunity members: </span><span>Low</span>
+                    {% else %}
+                        <span class="text-info">Distruption in the association among the comunity members: </span><span>High</span>
+                    {% endif %}
+                    <br>
+                    {% if object.psycholical_effect == 0 %}
+                        <span class="text-info">Psychological effect: </span><span>Low</span>
+                    {% else %}
+                        <span class="text-info">Psychological effect: </span><span>High</span>
+                    {% endif %}
+                    <br>
+                    {% if object.water_effectOn == 0 %}
+                        <span class="text-info">Effect on drinking water supply to community: </span><span>Low</span>
+                    {% else %}
+                        <span class="text-info">Effect on drinking water supply to community: </span><span>High</span>
+                    {% endif %}
+
+                {% elif request.user|has_group:"environment" %}
+                    <hr/>
+                    {% if object.oil_type == 0 %}
+                        <span class="text-info">Type of oil: </span><span>light</span>
+                    {% elif object.oil_type == 1 %}
+                        <span class="text-info">Type of oil: </span><span>medium</span>
+                    {% elif object.oil_type == 2 %}
+                        <span class="text-info">Type of oil: </span><span>heavy</span>
+                    {% else %}
+                        <span class="text-info">Type of oil: </span><span>extra heavy</span>
+                    {% endif %}
+                    <br>
+                    {% if object.flora_fauna_destruc == 0 %}
+                        <span class="text-info">Destruction of flora and fauna: </span><span>low</span>
+                    {% else %}
+                    <span class="text-info">Destruction of flora and fauna: </span><span>high</span>
+                    {% endif %}
+                    <br>
+                    {% if object.release == 0 %}
+                        <span class="text-info">Release of oil: </span><span>low</span>
+                    {% else %}
+                        <span class="text-info">Release of oil: </span><span>high</span>
+                    {% endif %}
+                    <br>
+                    {% if object.days_at_sea == 1 %}
+                        <span class="text-info">Days expected to spend at sea: </span><span>5 to 15 days</span>
+                    {% else %}
+                        <span class="text-info">Days expected to spend at sea: </span><span>15 to 25 days</span>
+                    {% endif %}
+                    <br>
+                {% endif %}
+            </li>
+       </ul>
+       <div class="card-footer text-muted">
+        <a href="{% url 'delete-scenario-v2' object.id %}"
+           class="btn btn-outline-danger btn-sm" style = "float: right">Delete Scenario</a>
+        <a href="{% url 'update-scenario' object.id %}"
+           class="btn btn-outline-secondary btn-sm" style = "float: right">Update Scenario</a>
+        </div>
+    </div>
+
+    <div class = "column">
+       <div class="container">
+            <img src="data:image/png;base64, {{ data|safe }}" alt="">
+       </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+{% endblock %}

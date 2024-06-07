@@ -1,0 +1,32 @@
+{% extends 'theID/base.html' %}
+{% block title %}OSDSS{% endblock %}
+{% block heading %}Login to OSDSS{% endblock %}
+
+{% block content %}
+  <br/>
+  <h1>Login</h1>
+  <br/>
+  <br>
+<style>
+  .useridpwd{
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    margin: 40px;
+    padding: 20px;
+    width: 30%;
+  }
+</style>
+  <form action="" method=POST>
+    {% csrf_token %}
+      <div class = "shadow p-4 mb-5 bg-body rounded">
+        <label for="username" class="form-label">Username</label>
+        <input type="text" class="form-control" name="username" aria-describedby="useridpwd">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" name="password">
+      </div>
+    <br/>
+    <input type="submit" value="login" class="btn btn-secondary">
+  </form>
+  <br>
+{% endblock %}
