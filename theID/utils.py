@@ -31,7 +31,7 @@ def getSEI(scenario):#this function looks good for MNA recovery method
     sei = []
     s = 0
     sei.append(scenario.socioeconomic_impact)
-    print("Karlo dada")
+    print("Karlo dada 2")
     print(sei[0])
 
     Qpt = Qpt * (1-0.3)#due to mechanical recovery of oil at, assuming, 30% remediation in the first year
